@@ -10,21 +10,41 @@ namespace Wiara
     {
         static void Main(string[] args)
         {
-            int y = 0,x;
-            int[] a = { 10, 12, 14 };
-            for (x = 0; x <= 2; x++)
-            {
-                y += 2 * x;
-                
-                
-                for(int i = 0; i < a.Length; i++)
-                {
-                    y += 2 * a[i];
-                }
-                Console.WriteLine(y);
-            }
+            Console.WriteLine("Witaj w programie do liczenia miejsc zerowych!");
 
-            Console.WriteLine(y);
+            double a, b, c, delta, x0=0,x1=0, x2=0;
+
+            Console.WriteLine("Podaj współczynnik 'a'");
+            a = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Podaj współczynnik 'b'");
+            b = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Podaj współczynnik 'c'");
+            c = Convert.ToDouble(Console.ReadLine());
+
+            delta = Math.Pow(b, 2) - 4 * a * c;
+
+            Console.WriteLine("Delta jest równa:{0,2}",delta);
+
+            if (delta > 0)
+            {
+                x1 = -b - Math.Sqrt(delta) / (2 * a);
+
+                x2 = -b + Math.Sqrt(delta) / (2 * a);
+
+                Console.WriteLine("Miejsca zerowe to: \nx1 = {0,2} \nx2 = {1,2}", x1, x2);
+            }
+            else if (delta == 0)
+            {
+                x0 = -b / (2 * a);
+                Console.WriteLine("Miejce zerowe to:\nx0={0,2}", x0);
+            }
+            else
+            {
+                Console.WriteLine("Błąd");
+            }
+            Console.ReadKey();
         }
     }
 }
