@@ -47,7 +47,8 @@ namespace Dyktando
                     
                     Console.WriteLine("Twoja odpowiedź: {0,1} poprawna: {1,1}", bledy_zapisane[i], bledy[i]);
                 }
-            } else
+            }
+            else
             {
                 
                 Console.WriteLine("Udało Ci się rozwiązać dyktando bezbłędnie! Brawo!");
